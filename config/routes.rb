@@ -10,5 +10,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout'=> 'sessions#destroy'
 
+  get '/hives' => 'hives#index'
+  get '/hive' => 'hives#new'
+  post '/hives' => 'hives#create'
+  get '/hives/:id' => 'hives#show'
+
 
 end

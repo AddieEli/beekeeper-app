@@ -15,8 +15,12 @@ class BeekeepersController < ApplicationController
                               password: params[:password],
                               password_confirmation: params[:password_confirmation]
                               )
-      beekeeper.save!
+       if beekeeper.save
+      session[:beekeeper_id] = beekeeper.id
       redirect_to '/'
+    else
+      redirect_to '/signup'
+    end
   end
 
 end

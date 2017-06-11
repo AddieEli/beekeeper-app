@@ -1,3 +1,5 @@
-<h1> Hello, <%= @beekeeper.first_name %> </h1>
+<h1> Hello <%= current_beekeeper.first_name %></h1>
+
+<%= link_to "Add a Hive", "/hive", class: "btn btn-success" %>
 
 
