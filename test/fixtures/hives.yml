@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bee_breed: MyString
+  hive_style: 1
+  hive_address: MyString
+  hive_city: MyString
+  hive_state: MyString
+
+two:
+  bee_breed: MyString
+  hive_style: 1
+  hive_address: MyString
+  hive_city: MyString
+  hive_state: MyString

@@ -1,0 +1,3 @@
+class BeekeeperHive < ApplicationRecord
+  
+end

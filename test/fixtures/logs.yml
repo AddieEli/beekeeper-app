@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notes: MyString
+  hive_general_status: 1
+  queen: 1
+  larva: 1
+  comb_build: 1
+  weather_daily_low: 1
+  weather_daily_high: 1
+  weather_daily_average: 1
+  hive_id: 1
+
+two:
+  notes: MyString
+  hive_general_status: 1
+  queen: 1
+  larva: 1
+  comb_build: 1
+  weather_daily_low: 1
+  weather_daily_high: 1
+  weather_daily_average: 1
+  hive_id: 1
