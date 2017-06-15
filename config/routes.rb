@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   post '/hives' => 'hives#create'
   get '/hives/:id' => 'hives#show'
 
+  get '/logs' => 'logs#index'
+  get '/hives/:hive_id/logs/new' => 'logs#new'
+  post '/logs' => 'logs#create'
+  get '/delete_log' => 'logs#destroy'
 
 end

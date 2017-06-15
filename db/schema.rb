@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611192820) do
+ActiveRecord::Schema.define(version: 20170611221003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beekeeper_hives", force: :cascade do |t|
-    t.integer "hive"
-    t.integer "beekeeper"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hive_id"
+    t.integer "beekeeper_id"
   end
 
   create_table "beekeepers", force: :cascade do |t|
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170611192820) do
     t.string "hive_state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hive_name"
   end
 
   create_table "logs", force: :cascade do |t|

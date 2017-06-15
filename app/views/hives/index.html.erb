@@ -1,0 +1,9 @@
+<h1>All of <%= current_beekeeper.first_name %>'s Hives</h1>
+
+  <% @hives.each do |hive| %>
+  <h3><a href="/hives/<%= hive.id %>"><%= hive.hive_name %></a></h3>
+  <h3><%= hive.hive_style %></h3>
+  <% end %>
+
+
+

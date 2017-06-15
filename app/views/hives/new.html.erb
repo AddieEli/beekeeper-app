@@ -2,7 +2,31 @@
 
 <%= form_tag '/hives', method: :post do %>
 <div>
+  <%= label_tag :hive_name %>
+  <%= text_field_tag :hive_name%>  
+</div>
+<div>
   <%= label_tag :bee_breed %>
   <%= text_field_tag :bee_breed %>  
 </div>
-  <% end %>
+<div>
+  <%= label_tag :hive_style%>
+  <%= text_field_tag :hive_style%>  
+</div>
+<div>
+  <%= label_tag :hive_address %>
+  <%= text_field_tag :hive_address %>  
+</div>
+<div>
+  <%= label_tag :hive_city %>
+  <%= text_field_tag :hive_city %>  
+</div>
+<div>
+  <%= label_tag :hive_state %>
+  <%= text_field_tag :hive_state %>  
+</div>
+<%= submit_tag "Add Hive" %>
+
+<% end %>
+
+

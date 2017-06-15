@@ -9,14 +9,13 @@ class SessionsController < ApplicationController
       session[:beekeeper_id] = beekeeper.id
       redirect_to '/'
     else 
-      redirect_to '/login'
+      redirect_to '/signup'
     end
   end
 
   def destroy
     session[:beekeeper_id] = nil
-    redirect_to '/login'
-    
+    redirect_to '/signup'
   end
 
 end

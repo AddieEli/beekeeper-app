@@ -1,0 +1,39 @@
+<h1>Add a Log</h1>
+
+<%= form_tag '/logs', method: :post do %>
+  <%= hidden_field_tag :hive_id, @hive_id %>
+  <div>
+    <%= label_tag :notes %>
+    <%= text_area_tag :notes %>
+  </div>
+  <br>
+  <div>
+  <h3>How was the hive during this visit?</h3>
+     In Good Health: <%= radio_button_tag("hive_general_status", "In Good Health", true) %>
+     <br>
+    Uncertain: <%= radio_button_tag("hive_general_status", "Uncertain") %>
+    <br>
+    SOS: <%= radio_button_tag("hive_general_status", "SOS") %> 
+    <br>
+  </div>
+
+  <div>
+    <h3>Did you see the Queen?</h3>  
+     Yes <%= check_box_tag("queen", "Yes") %>
+     No <%= check_box_tag("queen", "No") %>  
+  </div>
+    <div>
+    <h3>Did you see larva?</h3>  
+     Yes <%= check_box_tag("larva", "Yes") %>
+     No <%= check_box_tag("larva", "No") %>  
+  </div>
+    <br>
+     <div>
+    <h3>Did you see proper comb build?</h3>  
+     Yes <%= check_box_tag("comb_build", "Yes") %>
+     No <%= check_box_tag("comb_build", "No") %>  
+  </div>
+    <br>
+      <%= submit_tag "Save Log" %>
+  <% end  %>
+   
