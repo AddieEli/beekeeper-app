@@ -14,7 +14,7 @@ class LogsController < ApplicationController
                     hive_general_status: params[:hive_general_status],
                     queen: params[:queen],
                     larva: params[:larva],
-                    comb_build: params[:comb_build]
+                    comb_build: params[:comb_build],
                     hive_id: params[:hive_id]
                     )
       @log.save
