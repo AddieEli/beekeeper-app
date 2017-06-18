@@ -9,7 +9,18 @@
 <h3><%= @hive.hive_state%></h3>
 
 <%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-success"%>
+  <br>
+<h2> Most Recent Logs:</h2>
+
+  <% @log.each do |log| %>
+      <h4>Most Recent Update: <%= log.updated_at %></h4>
+      <h6>Field Notes: <%= log.notes %></h6>
+      <h6>Sightings: <%= log.queen%></h6> <h6> <%= log.larva %></h6> <h6> <%= log.comb_build %></h6>
+      <h6>Overall Status <%= log.hive_general_status %></h6>
+      <%= link_to "Delete", "/logs/#{ log.id }", method: :delete %>
+      <br>
+  <% end  %>
+
   
-  <%= @hive.display_log %>
 
  

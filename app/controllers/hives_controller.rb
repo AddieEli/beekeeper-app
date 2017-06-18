@@ -33,7 +33,7 @@ class HivesController < ApplicationController
 
   def show
       @hive = Hive.find(params[:id])
-     
+     @log = Log.where(hive_id: @hive.id)
   end
 
 end
