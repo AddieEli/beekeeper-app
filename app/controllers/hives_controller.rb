@@ -1,7 +1,8 @@
 class HivesController < ApplicationController
 
   def index
-    @hives = Hive.all
+    @hives = current_beekeeper.hives
+
 
   end
 
@@ -16,17 +17,24 @@ class HivesController < ApplicationController
                       hive_style: params[:hive_style],
                       hive_address: params[:hive_address],
                       hive_city: params[:hive_city],
-                      hive_state: params[:hive_state]
-                      
+                      hive_state: params[:hive_state] 
                     )
-    if @hive.save
-      redirect_to '/hives/:id'
+      if @hive.save
+        
+      join = BeekeeperHive.new(
+                          hive_id: @hive.id,
+                          beekeeper_id: current_beekeeper.id
+                          )
+      join.save
+
+      redirect_to "/hives/#{@hive.id}"
     end
   end 
 
   def show
-    @hive = Hive.find(params[:id])
+      @hive = Hive.find(params[:id])
+     
+  end
 
-  end 
 end
 

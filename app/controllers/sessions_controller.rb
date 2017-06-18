@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:beekeeper_id] = beekeeper.id
       redirect_to '/'
     else 
+      flash[:warning] = 'Invalid email or password'
       redirect_to '/signup'
       
     end

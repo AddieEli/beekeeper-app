@@ -1,7 +1,7 @@
 class BeekeepersController < ApplicationController
 
   def index
-    
+
   end   
 
   def new 
@@ -15,8 +15,8 @@ class BeekeepersController < ApplicationController
                               password: params[:password],
                               password_confirmation: params[:password_confirmation]
                               )
-       if beekeeper.save
-      session[:beekeeper_id] = beekeeper.id
+       if @beekeeper.save
+      session[:beekeeper_id] = @beekeeper.id
       redirect_to '/'
     else
       redirect_to '/signup'

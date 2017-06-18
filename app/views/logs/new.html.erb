@@ -1,7 +1,7 @@
 <h1>Add a Log</h1>
 
 <%= form_tag '/logs', method: :post do %>
-  <%= hidden_field_tag :hive_id, @hive_id %>
+  <%= hidden_field_tag :hive_id, params[:hive_id] %>
   <div>
     <%= label_tag :notes %>
     <%= text_area_tag :notes %>
