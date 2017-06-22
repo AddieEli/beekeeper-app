@@ -6,6 +6,17 @@
 
 <h3>Your Currently Tracked Hives</h3>
 
+<% current_beekeeper.hives.each do |hive| %>
+  <h4><a href="/hives/<%= hive.id %>"><%= hive.hive_name %></a> 
+  <div>
+    <h5>Hive Origin: <%= hive.hive_origin %></h5>
+  </div>
+  <div>
+    <h5>Queen Origin:<%= hive.queen_origin %></h5>
+  </div>
+  
+
+<% end %>
 
 
 

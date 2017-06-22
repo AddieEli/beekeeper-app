@@ -1,12 +1,28 @@
 <h1>Your INDIVIDUAL hive:</h1>
 <%= hidden_field_tag :hive_id, @hive_id %>
 
+
+<h2>Weather: <%= @city %></h2>
+<h4>Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
+
+<h3>5 Day Forecast</h3>
+  <% @forecasts.each do |forecast| %>
+      <%= forecast["day"] %>, <%= forecast["date"] %>
+      <ul>
+        <li>Weather: <%= forecast["text"] %></li>
+        <li>High: <%= forecast["high"] %></li>
+        <li>Low: <%= forecast["low"] %></li>
+      </ul>
+  <% end %>
+
 <h2> <%= @hive.hive_name %> </h2>
 <h3><%= @hive.bee_breed %></h3>
 <h3><%= @hive.hive_style %></h3>
-<h3><%= @hive.hive_address %></h3>
 <h3><%= @hive.hive_city %></h3>
 <h3><%= @hive.hive_state%></h3>
+
+<h3><%= @hive.hive_origin %></h3>
+<h3><%= @hive.queen_origin %></h3>
 
 <%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-success"%>
   <br>
@@ -17,10 +33,11 @@
       <h6>Field Notes: <%= log.notes %></h6>
       <h6>Sightings: <%= log.queen%></h6> <h6> <%= log.larva %></h6> <h6> <%= log.comb_build %></h6>
       <h6>Overall Status <%= log.hive_general_status %></h6>
-      <%= link_to "Delete", "/logs/#{ log.id }", method: :delete %>
+      <%= link_to "Delete Log", "/logs/#{ log.id }", method: :delete %>
       <br>
   <% end  %>
 
+<%= link_to "Delete Hive", "/hives/#{ @hive.id }", method: :delete %>
   
 
  
