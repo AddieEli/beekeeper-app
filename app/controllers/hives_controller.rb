@@ -1,9 +1,7 @@
 class HivesController < ApplicationController
 
   def index
-    @hives = current_beekeeper.hives
-
-
+    @hives = current_beekeeper.hives.where(parent_id: nil)
   end
 
   def new

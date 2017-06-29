@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622010241) do
+ActiveRecord::Schema.define(version: 20170625190537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170622010241) do
     t.string "hive_name"
     t.string "hive_origin"
     t.string "queen_origin"
+    t.integer "parent_id"
   end
 
   create_table "logs", force: :cascade do |t|

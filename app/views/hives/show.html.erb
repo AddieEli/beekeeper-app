@@ -17,12 +17,12 @@
 
 <h2> <%= @hive.hive_name %> </h2>
 <h3><%= @hive.bee_breed %></h3>
-<h3><%= @hive.hive_style %></h3>
 <h3><%= @hive.hive_city %></h3>
 <h3><%= @hive.hive_state%></h3>
-
+<h3>PARENT ID: <%= @hive.parent_id %></h3>
 <h3><%= @hive.hive_origin %></h3>
 <h3><%= @hive.queen_origin %></h3>
+
 
 <%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-success"%>
   <br>

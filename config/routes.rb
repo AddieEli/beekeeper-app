@@ -21,6 +21,15 @@ Rails.application.routes.draw do
   post '/logs' => 'logs#create'
   delete '/logs/:id' => 'logs#destroy'
 
+  namespace :api do
+    namespace :v1 do
+      get '/hives' => 'hives#index'
+      post '/hives' => 'hives#create'
+      patch '/hives/:id' => 'hives#update'
+      get '/hives/:id' => 'hives#show'
+    end
+  end
+
   
 
 end

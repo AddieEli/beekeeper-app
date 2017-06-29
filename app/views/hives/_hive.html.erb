@@ -1,0 +1,10 @@
+
+<p><a href="/hives/<%= hive.id %>"><%= level %> - <%= hive.hive_name %></a></p>
+<div class="nested_hive">
+  <% hive.children_hives.each do |child_hive| %>
+      <%= render partial: "hive", locals: {hive: child_hive, level: level + 1 } %>
+  <% end %>
+</div>
+<div id="app">
+  {{ message }}
+</div>

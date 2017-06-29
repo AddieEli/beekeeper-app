@@ -22,5 +22,7 @@ class BeekeepersController < ApplicationController
       redirect_to '/signup'
     end
   end
+  
+  
 
 end
