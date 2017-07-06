@@ -1,22 +1,195 @@
-<h1> Hello <%= current_beekeeper.first_name %>,</h1>
+   <!-- >>>>>>>>>>>>>>>> Welcome Area Start <<<<<<<<<<<<<<<< -->
+    <section class="landing_welcome_area landing_one_version" style="background-image: url(http://www.motherearthnews.com/-/media/Images/MEN/Editorial/Blogs/Homesteading-and-Livestock/Langstroth-Top-Bar-Or-Warre-Choosing-The-Right-Hive/lw1-jpg.jpg);" id="home">
+        <div class="table">
+            <div class="table_cell">
+                <div class="container">
+                    <div class="row">
+                        <!-- Welcome Text  -->
+                        <div class="landing_hero_text text-center">
+                            <h2 class="fonts-shadow-into-light">APIARY</h2>
+                            <p>A tool for beekeepers. </p>
+                            <a href="/signup" class="landing_button">Join the Hive</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- >>>>>>>>>>>>>>>> Welcome Area End <<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>> Why Choose Us Area Start <<<<<<<<<<<<<<<< -->
+    <section class="landing_why_choose_us landing_one_version section_padding_100_50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- Section Heading Start -->
+                    <div class="section_heading">
+                        <h3>Why Choose One</h3>
+                        <p>Classy is completely creative, clean &amp; 100% responsive website.
+                            <br> Put your business into next level with one.</p>
+                    </div>
+                </div>
+            </div>
 
-<h5>Beekeeper home page</h5>
+            <div class="row">
+                <!-- Single Why Choose Us Start -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-center">
+                        <i class="fa fa-rocket" aria-hidden="true"></i>
+                        <h4>Fastest Speed</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nesciunt iure officia architecto rem iusto, numquam magnam eum doloremque omnis.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                <!-- Single Why Choose Us Start -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-center">
+                        <i class="fa fa-life-ring" aria-hidden="true"></i>
+                        <h4>Friendly Support</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nesciunt iure officia architecto rem iusto, numquam magnam eum doloremque omnis.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                <!-- Single Why Choose Us Start -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-center">
+                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                        <h4>Super Responsive</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nesciunt iure officia architecto rem iusto, numquam magnam eum doloremque omnis.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                <!-- Single Why Choose Us Start -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-center">
+                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                        <h4>Super Responsive</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nesciunt iure officia architecto rem iusto, numquam magnam eum doloremque omnis.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                <!-- Single Why Choose Us Start -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-center">
+                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                        <h4>Super Responsive</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nesciunt iure officia architecto rem iusto, numquam magnam eum doloremque omnis.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                <!-- Single Why Choose Us Start -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-center">
+                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                        <h4>Super Responsive</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nesciunt iure officia architecto rem iusto, numquam magnam eum doloremque omnis.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-<%= link_to "Add a Hive", "/hive", class: "btn btn-success" %>
+        </div>
+    </section>
+    <!-- >>>>>>>>>>>>>>>> Why Choose Us Area End <<<<<<<<<<<<<<<< -->
 
-<h3>Your Currently Tracked Hives</h3>
 
-<% current_beekeeper.hives.each do |hive| %>
-  <h4><a href="/hives/<%= hive.id %>"><%= hive.hive_name %></a> 
-  <div>
-    <h5>Hive Origin: <%= hive.hive_origin %></h5>
-  </div>
-  <div>
-    <h5>Queen ID:<%= hive.parent_id %></h5>
-  </div>
-  <br>
-  <% end %>
+    <!-- >>>>>>>>>>>>>>>> FAQ Area Start <<<<<<<<<<<<<<<< -->
+    <section class="faq_question_area landing_one_version section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="faq_area">
+                        <div class="accordions" id="accordion" role="tablist" aria-multiselectable="true">
 
-<br>
+                            <!-- single accordian area start -->
+                            <div class="panel single-accordion">
+                                <h5>
+                                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">How can I apply for a job?
+                                    <span class="accor-open"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                                    </a>
+                                </h5>
+                                <div id="collapseOne" class="accordion-content collapse">
+                                    <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                </div>
+                            </div>
 
-  
+                            <!-- single accordian area start -->
+                            <div class="panel single-accordion">
+                                <h5>
+                                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="two" data-parent="#accordion" data-toggle="collapse" href="#two">Where can I find out about solution?
+                                    <span class="accor-open"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                                    </a>
+                                </h5>
+                                <div id="two" class="accordion-content collapse">
+                                    <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                </div>
+                            </div>
+
+                            <!-- single accordian area start -->
+                            <div class="panel single-accordion">
+                                <h5>
+                                    <a role="button" aria-expanded="true" aria-controls="three" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#three">Who can use the apps? 
+                                     <span class="accor-open"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                                    </a>
+                                </h5>
+                                <div id="three" class="accordion-content collapse">
+                                    <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                    <div class="faq_area two">
+                        <div class="accordions" id="accordiontwo" role="tablist" aria-multiselectable="true">
+
+                            <!-- single accordian area start -->
+                            <div class="panel single-accordion">
+                                <h5>
+                                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="four" data-toggle="collapse" data-parent="#accordiontwo" href="#four">How can I apply for a job?
+                                    <span class="accor-open"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                                    </a>
+                                </h5>
+                                <div id="four" class="accordion-content collapse">
+                                    <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                </div>
+                            </div>
+
+                            <!-- single accordian area start -->
+                            <div class="panel single-accordion">
+                                <h5>
+                                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="five" data-parent="#accordiontwo" data-toggle="collapse" href="#five">Where can I find out about solution?
+                                    <span class="accor-open"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                                    </a>
+                                </h5>
+                                <div id="five" class="accordion-content collapse">
+                                    <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                </div>
+                            </div>
+
+                            <!-- single accordian area start -->
+                            <div class="panel single-accordion">
+                                <h5>
+                                    <a role="button" aria-expanded="true" aria-controls="six" class="collapsed" data-parent="#accordiontwo" data-toggle="collapse" href="#six">Who can use the apps? 
+                                     <span class="accor-open"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                                    </a>
+                                </h5>
+                                <div id="six" class="accordion-content collapse">
+                                    <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- >>>>>>>>>>>>>>>> FAQ Area End <<<<<<<<<<<<<<<< -->

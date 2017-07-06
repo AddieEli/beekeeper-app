@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/beekeepers' => 'beekeepers#index'
   get '/' => 'beekeepers#index'
-
   get '/signup' => 'beekeepers#new'
   post '/beekeepers' => 'beekeepers#create'
 

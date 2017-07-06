@@ -1,7 +1,10 @@
 class HivesController < ApplicationController
+before_action :authenticate_user!
 
   def index
     @hives = current_beekeeper.hives.where(parent_id: nil)
+    @log = Log.last 
+
   end
 
   def new

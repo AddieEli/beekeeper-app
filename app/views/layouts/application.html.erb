@@ -1,70 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+
   <head>
-    <title>BeekeeperApp</title>
+    <title>Apiary</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Owl-carousel js -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- Plugins js -->
+    <script src="/js/plugins.js"></script>
+    <!-- Ajax Contact js -->
+    <script src="js/ajax-contact.js"></script>
+    <!-- Onepage Nav js -->
+    <script src="/js/jquery.nav.min.js"></script>
+    <!-- YTplayerjs -->
+    <script src="/js/YTplayer.min.js"></script>
+    <!-- Isotope js -->
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <!-- Imagesloaded js -->
+    <script src="/js/imagesloaded.min.js"></script>
+    <!-- WOW js -->
+    <script src="/js/wow.min.js"></script>
+    <!-- Active js -->
+    <script src="/js/active.js"></script>
 
-  </head>
 
+      <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Classy - Multipurpose Template | Service Landing</title>
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="/img/core-img/favicon.ico">
+
+    <!-- >>>>>>>>>>>>>>>> All CSS Files <<<<<<<<<<<<<<<< -->
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/css/core-style.css">
+
+    <!-- Switch Fonts -->
+    <link rel="stylesheet" href="/css/fonts/opensans-lato.css">
+    <link rel="stylesheet" href="/css/fonts/shadow-into-light.css">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!--[if IE]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
   <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Home</a>
-    </div>
+  <!-- >>>>>>>>>>>>>>>> Header Area Start <<<<<<<<<<<<<<<< -->
+    <header>
+        <div class="wsmenucontainer clearfix">
+            <!-- Mobile Header Area -->
+            <div class="wsmobileheader clearfix">
+                <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
+                <a class="smallogo"><img src="img/core-img/agency-logo.png" alt="" width="25"></a>
+                <a class="callusicon" href="tel:123456789"><span class="fa fa-phone"></span></a>
+            </div>
+            <!-- Mobile Header Social Icon Area -->
+            <div class="headtoppart clearfix">
+                <div class="headerwp">
+                    <div class="headertopleft">
+                        <div class="address clearfix"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Chicago, IL </span></div>
+                    </div>
+                    <div class="headertopright">
+                        <a class="twittericon" title="Twitter" href="#" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i><span class="mobiletext02">Twitter</span></a>
+                        <a class="linkedinicon" title="Linkedin" href="#" target="_blank"><i aria-hidden="true" class="fa fa-linkedin"></i><span class="mobiletext02">Linkedin</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Header Start -->
+            <div class="headerfull animated">
+                <div class="wsmain">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/hives">Hives <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="Account">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+                    <!-- Logo Area -->
+                    <div class="smllogo">
+                        <a href="index.html"><img src="img/core-img/agency-logo.png" alt=""></a>
+                    </div>
+
+                    <!-- Navigation Area Start -->
+                    <nav class="wsmenu clearfix">
+                        <ul class="mobile-sub wsmenu-list">
+                            <li class="rightmenu">
+                                <form class="topmenusearch">
+                                    <input placeholder="Search...">
+                                    <button type="submit" class="btnstyle"><i class="searchicon fa fa-search" aria-hidden="true"></i></button>
+                                </form>
+                            </li>
+                            <li><a href="#"><i class="fa fa-home"></i>Apiary<span class="arrow"></span></a>
+                                <ul class="wsmenu-submenu">
+                                    <li><a href="/hives" target="_blank">Hives</a></li>
+                                    <li><a href="/hive">Add a Hive</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-list-alt"></i> Tracking <span class="arrow"></span></a>
+                                <div class="megamenu clearfix halfmenu">
+                                    <ul class="megacollink">
+                                        <li class="title">Map</li>
+                                        <li><a href="about-us-1.html" target="_blank">About Us -1</a></li>
+                                        <li><a href="about-us-2.html" target="_blank">About Us -2</a></li>
+                                    </ul>
+                                    <ul class="megacollink">
+                                        <li class="title">Weather</li>
+                                        <li><a href="team-members.html" target="_blank">Team Members</a></li>
+                                        <li><a href="price-plan.html" target="_blank">Price Plan</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i>Features <span class="arrow"></span></a>
+                                <ul class="wsmenu-submenu">
+                                    <li><a href="#"><i class="fa fa-umbrella" aria-hidden="true"></i>Header</a>
+                                        <ul class="wsmenu-submenu-sub">
+                                            <li><a href="header-light.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Light</a></li>
+                                            <li><a href="header-dark.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Dark</a></li>
+                                            <li><a href="header-transparent.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Transparent</a></li>
+                                            <li><a href="#"><i class="fa fa-umbrella" aria-hidden="true"></i>Semi Transparent</a>
+                                                <ul class="wsmenu-submenu-sub-sub">
+                                                    <li><a href="header-semi-transparent-light.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Light</a></li>
+                                                    <li><a href="header-semi-transparent-dark.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Dark</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="header-left-side.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Left Side</a></li>
+                                            <li><a href="header-right-side.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Right Side</a></li>
+                                            <li><a href="header-floating.html" target="_blank"><i class="fa fa-umbrella" aria-hidden="true"></i>Floating</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i>Hero Slider</a>
+                                        <ul class="wsmenu-submenu-sub">
+                                            <li><a href="slidea-slider.html" target="_blank"><i class="fa fa-sliders" aria-hidden="true"></i>Slidea Slider</a></li>
+                                            <li><a href="owl-slider.html" target="_blank"><i class="fa fa-sliders" aria-hidden="true"></i>Owl Carousel</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i>Hero Area</a>
+                                        <ul class="wsmenu-submenu-sub">
+                                            <li><a href="slidea-slider.html" target="_blank"><i class="fa fa-sliders" aria-hidden="true"></i>Slider</a></li>
+                                            <li><a href="static-image.html" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i>Static Image</a></li>
+                                            <li><a href="static-parallax.html" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i>Static Parallax</a></li>
+                                            <li><a href="static-yourube-video.html" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i>Static YouTube Video</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-outdent" aria-hidden="true"></i>Breadcumb</a>
+                                        <ul class="wsmenu-submenu-sub">
+                                            <li><a href="breadcumb-bg-image.html" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i> Background Image</a></li>
+                                            <li><a href="breadcumb-bg-slider.html" target="_blank"><i class="fa fa-sliders" aria-hidden="true"></i> Background Slider</a></li>
+                                            <li><a href="breadcumb-center-align.html" target="_blank"><i class="fa fa-align-center" aria-hidden="true"></i> Center Align</a></li>
+                                            <li><a href="breadcumb-left-align.html" target="_blank"><i class="fa fa-align-left" aria-hidden="true"></i> Left Align</a></li>
+                                            <li><a href="breadcumb-right-align.html" target="_blank"><i class="fa fa-align-right" aria-hidden="true"></i> Right Align</a></li>
+                                            <li><a href="breadcumb-paticles-bg.html" target="_blank"><i class="fa fa-align-right" aria-hidden="true"></i> Particles</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact</a>
+                                        <ul class="wsmenu-submenu-sub">
+                                            <li><a href="contact-1.html" target="_blank"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact 1</a></li>
+                                            <li><a href="contact-2.html" target="_blank"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact 2</a></li>
+                                            <li><a href="contact-3.html" target="_blank"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Contact 3 <span class="label label-success">New</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i>Footer</a>
+                                        <ul class="wsmenu-submenu-sub">
+                                            <li><a href="footer-1.html" target="_blank"><i class="fa fa-list" aria-hidden="true"></i>Footer - 1</a></li>
+                                            <li><a href="footer-2.html" target="_blank"><i class="fa fa-list" aria-hidden="true"></i>Footer - 2</a></li>
+                                            <li><a href="footer-3.html" target="_blank"><i class="fa fa-list" aria-hidden="true"></i>Footer - 3</a></li>
+                                            <li><a href="footer-4.html" target="_blank"><i class="fa fa-list" aria-hidden="true"></i>Footer - 4</a></li>
+                                            <li><a href="footer-5.html" target="_blank"><i class="fa fa-list" aria-hidden="true"></i>Footer - 5</a></li>
+                                            <li><a href="footer-reveal.html" target="_blank"><i class="fa fa-list" aria-hidden="true"></i>Footer Sticky</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>Coming Soon</a>
+                                        <ul class="wsmenu-submenu-sub">
+                                            <li><a href="comining-soon-bg-img.html" target="_blank"><i class="fa fa-clock-o" aria-hidden="true"></i>Coming Soon - 1</a></li>
+                                            <li><a href="comining-soon-default.html" target="_blank"><i class="fa fa-clock-o" aria-hidden="true"></i>Coming Soon - 2</a></li>
+                                            <li><a href="comining-soon-youtube-video.html" target="_blank"><i class="fa fa-clock-o" aria-hidden="true"></i>Coming Soon - 3</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- Navigation Area End -->
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Account <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/logout">Log Out</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </header>
+    <!-- >>>>>>>>>>>>>>>> Header Area End <<<<<<<<<<<<<<<< -->
+
+    <!-- >>>>>>>>>>>>>>>> Footer Area Start <<<<<<<<<<<<<<<< -->
     <%= yield %>
+
+
+    <footer class="footer_area">
+       
+        </div>
+        <!-- Footer Bottom Area Start -->
+        <div class="foo_bottom_header_one section_padding_50 text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>&copy; All Rights Reserved | Design &amp; Develop by <a href="#">Designing World</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- >>>>>>>>>>>>>>>> Footer Area End <<<<<<<<<<<<<<<< -->
+
+    
+   
+
+
+
   </body>
 </html>
-
-

@@ -1,8 +1,59 @@
-<h1>All of <%= current_beekeeper.first_name %>'s Hives</h1>
 
-  <% @hives.each do |hive| %>
+<!-- >>>>>>>>>>>>>>>> Breadcumb Area Start <<<<<<<<<<<<<<<< -->
+    <section class="breadcumb_area background-overlay" style="background-image: url(http://jewelwpg.com/wp-content/uploads/bee-on-flower-Pakhnyushchy-Shutterstock.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb_section">
+                        <!-- Breadcumb Page Title -->
+                        <div class="page_title">
+                            <h3>Hello <%= current_beekeeper.first_name %>,</h3>
+                        </div>
+                        <!-- Breadcumb Page Pagination -->
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">something</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- >>>>>>>>>>>>>>>> Breadcumb Area End <<<<<<<<<<<<<<<< -->
+
+    <section class="section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> Your Apiary </h3>
+                    <% current_beekeeper.hives.each do |hive| %>
+                        <h4><a href="/hives/<%= hive.id %>"><%= hive.hive_name %></a> </h4>
+                           <h5> <%= hive.last_log %> </h5>   
+
+                        <% end %>
+                </div>
+            
+                 
+               
+            </div>
+        </div>
+    </section>
+
+
+ ------------- may remove ---------------
+
+
+<h3>Your Currently Tracked Hives</h3>
+
+
+<br>
+<h3>Apiary Chart</h3>
+<% @hives.each do |hive| %>
       <%= render partial: "hive", locals: {hive: hive, level: 1} %>
   <% end %>
+  <div id="app">
+  {{ message }}
+</div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
        <div id="chart_div"></div>

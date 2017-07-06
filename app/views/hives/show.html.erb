@@ -1,8 +1,56 @@
-<h1>Your INDIVIDUAL hive:</h1>
+
+
+<!-- >>>>>>>>>>>>>>>> Breadcumb Area Start <<<<<<<<<<<<<<<< -->
+    <section class="breadcumb_area background-overlay" style="background-image: url(https://media.npr.org/assets/img/2013/05/13/honeycomb-2_wide-49ae2c6ec87d4b4092881baf81e2de967926cba5.jpg?s=1400);">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb_section">
+                        <!-- Breadcumb Page Title -->
+                        <div class="page_title">
+                            <h3> <%= @hive.hive_name %></h3>
+                        </div>
+                        <!-- Breadcumb Page Pagination -->
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">something</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- >>>>>>>>>>>>>>>> Breadcumb Area End <<<<<<<<<<<<<<<< -->
+
+    <section class="section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3> Hive Information: </h3>
+                    <h4>Breed: <%= @hive.bee_breed %></h4>
+                      <h4>City: <%= @hive.hive_city %></h4>
+                      <h4>State: <%= @hive.hive_state%></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section clas="section_padding_100"> 
+      <div class="container">
+        <div class ="row">
+           <div class="col-x-12">
+           <head>Upcoming Weather:</head>
+      
+          </div>  
+        </div>  
+      </div>
+    </section>
+
+
 <%= hidden_field_tag :hive_id, @hive_id %>
 
 
-<h2>Weather: <%= @city %></h2>
+
 <h4>Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
 
 <h3>5 Day Forecast</h3>
@@ -15,16 +63,10 @@
       </ul>
   <% end %>
 
-<h2> <%= @hive.hive_name %> </h2>
-<h3><%= @hive.bee_breed %></h3>
-<h3><%= @hive.hive_city %></h3>
-<h3><%= @hive.hive_state%></h3>
-<h3>PARENT ID: <%= @hive.parent_id %></h3>
-<h3><%= @hive.hive_origin %></h3>
-<h3><%= @hive.queen_origin %></h3>
 
 
-<%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-success"%>
+
+<%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-primary"%>
   <br>
 <h2> Most Recent Logs:</h2>
 
