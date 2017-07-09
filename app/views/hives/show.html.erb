@@ -25,48 +25,95 @@
         </div>
     </section>
     <!-- >>>>>>>>>>>>>>>> Breadcumb Area End <<<<<<<<<<<<<<<< -->
+<%= hidden_field_tag :hive_id, @hive_id %>
 
-    <section class="section_padding_100">
+    <!-- >>>>>>>>>>>>>>>> Why Choose Us Area Start <<<<<<<<<<<<<<<< -->
+    <section class="landing_why_choose_us landing_one_version section_padding_90_50">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h3> Hive Information: </h3>
-                    <h4>Breed: <%= @hive.bee_breed %></h4>
-                      <h4>City: <%= @hive.hive_city %></h4>
-                      <h4>State: <%= @hive.hive_state%></h4>
+                    <!-- Section Heading Start -->
+                    <div class="section_heading">
+                        <h3>Hive Information:</h3>
+                        <p>Add a log entry, see foraging boundaries and check the forecast for your hive.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Hive Information Row -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-left">
+                        <i class="fa fa-rocket" aria-hidden="true"></i>
+                        <h3>Hive General Information</h3>
+                        <h4><%= @hive.hive_name %></h4>
+                        <h4>Breed: <%= @hive.bee_breed %></h4>
+                        <h4>Hive: <%= @hive.hive_style %></h4>
+                        <h4>Address:
+                                <%= @hive.street %>
+                                <%= @hive.hive_city %>, <%= @hive.hive_state %>
+                          </h4>
+                         <h6>Edit/Delete Routes needed</h6>
+                    
+                    </div>
+                </div>
+                <!-- 5 Day Forecast Row -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-left">
+                        <i class="fa fa-umbrella" aria-hidden="true"></i>
+                        <h4 text-decoration: strong;>Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
+                            <h3>5 Day Forecast</h3>
+                              <% @forecasts.each do |forecast| %>
+                        <%= forecast["day"] %>, <%= forecast["date"] %>
+                       <ul>
+                        <li>Weather: <%= forecast["text"] %></li>
+                        <li>High: <%= forecast["high"] %></li>
+                        <li>Low: <%= forecast["low"] %></li>
+                        _______________________________________
+                        <br>
+                      </ul>
+              <% end %>       
+                    </div>
+                </div>
+                <!-- Hive Internal temp Row -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="single_why_choose_us text-left">
+                        <i class="fa fa-rocket" aria-hidden="true"></i>
+                        <h3>Hive Internal Temprature</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section clas="section_padding_100"> 
-      <div class="container">
-        <div class ="row">
-           <div class="col-x-12">
-           <head>Upcoming Weather:</head>
-      
-          </div>  
-        </div>  
-      </div>
-    </section>
-
-
-<%= hidden_field_tag :hive_id, @hive_id %>
-
-
-
-<h4>Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
-
-<h3>5 Day Forecast</h3>
-  <% @forecasts.each do |forecast| %>
-      <%= forecast["day"] %>, <%= forecast["date"] %>
-      <ul>
-        <li>Weather: <%= forecast["text"] %></li>
-        <li>High: <%= forecast["high"] %></li>
-        <li>Low: <%= forecast["low"] %></li>
-      </ul>
-  <% end %>
-
+    <!-- >>>>>>>>>>>>>>>> Service Details Area Start <<<<<<<<<<<<<<<< -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="service_details_content">
+                        <p 
+                        <!-- Service Details Text Area -->
+                        <div class="single_part_content">
+                            <p class="solid"><h3> Hive Check Entries</h3>
+                            <%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-primary"%>
+                             <% @log.each do |log| %>
+                              <h4>Most Recent Update: <%= log.updated_at %></h4>
+                              <h5>Field Notes: </h5>
+                              <p>  <%= log.notes %> </p>
+                              <h5>Sightings:</h5>
+                              <h5> Queen: <%= log.queen%></h5> 
+                              <h5> Larva:<%= log.larva %></h5> 
+                              <h5> Proper Comb Build: <%= log.comb_build %></h5>
+                              <h5>Overall Status <%= log.hive_general_status %></h5>
+                              <%= link_to "Delete Log", "/logs/#{ log.id }", method: :delete %>
+                              <br>
+                          <% end  %>
+                        </div>
+                        </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -128,25 +175,16 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOc24sApllxhbn4SF_ntEsMApDN26raEM&callback=initMap">
     </script>
   </body>
-
-
-
-
-
-<%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-primary"%>
-  <br>
-<h2> Most Recent Logs:</h2>
-
-  <% @log.each do |log| %>
-      <h4>Most Recent Update: <%= log.updated_at %></h4>
-      <h6>Field Notes: <%= log.notes %></h6>
-      <h6>Sightings: <%= log.queen%></h6> <h6> <%= log.larva %></h6> <h6> <%= log.comb_build %></h6>
-      <h6>Overall Status <%= log.hive_general_status %></h6>
-      <%= link_to "Delete Log", "/logs/#{ log.id }", method: :delete %>
-      <br>
-  <% end  %>
-
 <%= link_to "Delete Hive", "/hives/#{ @hive.id }", method: :delete %>
+
+
+
+
+
+
+ 
+
+
   
 
  
