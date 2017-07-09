@@ -16,6 +16,7 @@ before_action :authenticate_user!
                       hive_name: params[:hive_name],
                       bee_breed: params[:bee_breed],
                       hive_style: params[:hive_style],
+                      street: params[:street],
                       hive_city: params[:hive_city],
                       hive_state: params[:hive_state],
                       hive_origin: params[:hive_origin],
@@ -49,6 +50,8 @@ before_action :authenticate_user!
     @state = @channel["location"]["region"]
 
     @forecasts = @channel["item"]["forecast"].first(5)
+
+    @hive.geocode
   end
 
   def destroy

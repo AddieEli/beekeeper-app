@@ -7,6 +7,10 @@ class Hive < ApplicationRecord
   has_many :beekeeper_hives
   has_many :beekeepers, through: :beekeeper_hives
   has_many :logs
+
+  #Map/Foraging Information
+  geocoded_by :full_street_address   
+  after_validation :geocode          # auto-fetch coordinates
  
   def last_log
     if logs.any?
@@ -14,5 +18,10 @@ class Hive < ApplicationRecord
     else
       "no logs yet!"
     end
+  end
+
+  def full_street_address
+      [street, hive_city, hive_state].compact.join(', ')
+
   end
 end
