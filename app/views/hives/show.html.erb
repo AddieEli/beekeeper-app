@@ -57,24 +57,7 @@
                     
                     </div>
                 </div>
-                <!-- 5 Day Forecast Row -->
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="single_why_choose_us text-left">
-                        <i class="fa fa-umbrella" aria-hidden="true"></i>
-                        <h4 text-decoration: strong;>Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
-                            <h3>5 Day Forecast</h3>
-                              <% @forecasts.each do |forecast| %>
-                        <%= forecast["day"] %>, <%= forecast["date"] %>
-                       <ul>
-                        <li>Weather: <%= forecast["text"] %></li>
-                        <li>High: <%= forecast["high"] %></li>
-                        <li>Low: <%= forecast["low"] %></li>
-                        _______________________________________
-                        <br>
-                      </ul>
-              <% end %>       
-                    </div>
-                </div>
+              
                 <!-- Hive Internal temp Row -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="single_why_choose_us text-left">
@@ -93,7 +76,7 @@
                         <p 
                         <!-- Service Details Text Area -->
                         <div class="single_part_content">
-                            <p class="solid"><h3> Hive Check Entries</h3>
+                            <p class="solid"><h3> Hive Check Entries</h3> </p>
                             <%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-primary"%>
                              <% @log.each do |log| %>
                               <h4>Most Recent Update: <%= log.updated_at %></h4>
@@ -107,13 +90,65 @@
                               <%= link_to "Delete Log", "/logs/#{ log.id }", method: :delete %>
                               <br>
                           <% end  %>
+                        </div>   
+                     </div>
+                  </div>
+             </div>
+        </div>
+
+      <br>
+
+      <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="service_details_content">
+                        <p 
+                        <!-- Service Details Text Area -->
+                        <div class="single_part_content">
+                            <p class="solid"><h3> Hive Forecast</h3> </p>
+                               <h4 text-decoration: strong; align="center">Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
+                              <table>
+                                <tr>
+                                  <th class="text-center">Day</th>
+                                  <th class="text-center">Forecast</th>
+                                  <th class="text-center">High</th>
+                                  <th class="text-center">Low</th>
+                                </tr>
+                                
+                                   <% @forecasts.each do |forecast| %>
+                                   <tr>
+                                    <td><%= forecast["day"] %></td>
+                                    <td><%= forecast["text"] %></td>
+                                    <td><%= forecast["high"] %></td>
+                                    <td><%= forecast["low"] %></td>
+                                    <% end %>
+                                    </tr>
+                               </table>
                         </div>
-                        </p>
-                    
+                    </div>
                 </div>
             </div>
+
+
+      <div class="container">
+          <div class="service_details_content">
+                       
+        <div class="single_part_content">
+                        <p class="solid"><h3> Hive Forecast</h3> </p>
+        <div class="row">
+        <div class="col-sm-6" style="background-color:yellow;">
+          <p>Lorem ipsum...</p>
         </div>
-    </div>
+        <div class="col-sm-6" style="background-color:pink;">
+          <p>Sed ut perspiciatis...</p>
+        </div>
+      </div>
+</div>
+
+    
+
+<br>
+
 
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">

@@ -1,1 +1,19 @@
 p.solid {border-style: solid;}
+
+table {
+    width: 100%;
+}
+th {
+  text-align: center;
+}
+
+th, td {
+    height: 40px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+
+
+tr:nth-child(even){background-color: #ffc166}
