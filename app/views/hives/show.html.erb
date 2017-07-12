@@ -2,8 +2,6 @@
  <!DOCTYPE html>
 <html>
  
-
- 
 <!-- >>>>>>>>>>>>>>>> Breadcumb Area Start <<<<<<<<<<<<<<<< -->
     <section class="breadcumb_area background-overlay" style="background-image: url(https://media.npr.org/assets/img/2013/05/13/honeycomb-2_wide-49ae2c6ec87d4b4092881baf81e2de967926cba5.jpg?s=1400);">
         <div class="container">
@@ -24,7 +22,7 @@
             </div>
         </div>
     </section>
-    <!-- >>>>>>>>>>>>>>>> Breadcumb Area End <<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>> General Screen Area End <<<<<<<<<<<<<<<< -->
 <%= hidden_field_tag :hive_id, @hive_id %>
 
     <!-- >>>>>>>>>>>>>>>> Why Choose Us Area Start <<<<<<<<<<<<<<<< -->
@@ -40,43 +38,26 @@
                 </div>
             </div>
 
-            <div class="row">
-                <!-- Hive Information Row -->
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="single_why_choose_us text-left">
-                        <i class="fa fa-rocket" aria-hidden="true"></i>
-                        <h3>Hive General Information</h3>
-                        <h4><%= @hive.hive_name %></h4>
-                        <h4>Breed: <%= @hive.bee_breed %></h4>
-                        <h4>Hive: <%= @hive.hive_style %></h4>
-                        <h4>Address:
-                                <%= @hive.street %>
-                                <%= @hive.hive_city %>, <%= @hive.hive_state %>
-                          </h4>
-                         <h6>Edit/Delete Routes needed</h6>
-                    
-                    </div>
-                </div>
-              
-                <!-- Hive Internal temp Row -->
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="single_why_choose_us text-left">
-                        <i class="fa fa-rocket" aria-hidden="true"></i>
-                        <h3>Hive Internal Temprature</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-    <!-- >>>>>>>>>>>>>>>> Service Details Area Start <<<<<<<<<<<<<<<< -->
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="service_details_content">
-                        <p 
-                        <!-- Service Details Text Area -->
-                        <div class="single_part_content">
-                            <p class="solid"><h3> Hive Check Entries</h3> </p>
+ <!-- >>>>>>>>>>>>>>>> 2 Column Details & Log <<<<<<<<<<<<<<<< -->
+
+      <div class="container">
+          <div class="service_details_content">
+            <div class="single_part_content">
+                <div class="row">
+                    <div class="col-sm-6">
+                      <h3>General Information</h3>
+                      <h4><%= @hive.hive_name %></h4>
+                      <h4>Breed: <%= @hive.bee_breed %></h4>
+                      <h4>Hive: <%= @hive.hive_style %></h4>
+                      <h4>Address:
+                          <%= @hive.street %>
+                          <%= @hive.hive_city %>, <%= @hive.hive_state %>
+                      </h4>
+                      <%= link_to "Edit", "/hives/#{ @hive.id }/edit" %>
+                    </div>
+                        <div class="col-sm-6">
+                               <h3> Hive-Check Entries</h3> 
                             <%= link_to "Add a Log", "/hives/#{@hive.id}/logs/new" , class: "btn btn-primary"%>
                              <% @log.each do |log| %>
                               <h4>Most Recent Update: <%= log.updated_at %></h4>
@@ -87,25 +68,27 @@
                               <h5> Larva:<%= log.larva %></h5> 
                               <h5> Proper Comb Build: <%= log.comb_build %></h5>
                               <h5>Overall Status <%= log.hive_general_status %></h5>
+                              <%= link_to "Edit", "/hives/#{ @hive.id}/logs/#{ log.id}/edit" %> | 
                               <%= link_to "Delete Log", "/logs/#{ log.id }", method: :delete %>
                               <br>
                           <% end  %>
-                        </div>   
-                     </div>
-                  </div>
-             </div>
+                        </div>
+            </div>
+          </div>
         </div>
+      </div>
 
       <br>
+ <!-- >>>>>>>>>>>>>>>> 2 Columns Forecast & Internal <<<<<<<<<<<<<<<< -->
 
       <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="service_details_content">
-                        <p 
-                        <!-- Service Details Text Area -->
-                        <div class="single_part_content">
-                            <p class="solid"><h3> Hive Forecast</h3> </p>
+          <div class="service_details_content">
+                       
+        <div class="single_part_content">
+                        <p class="solid"><h3> Tempratures</h3> </p>
+        <div class="row">
+        <div class="col-sm-6">
+          <h3> 5  Day Forecast</h3> 
                                <h4 text-decoration: strong; align="center">Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
                               <table>
                                 <tr>
@@ -124,23 +107,14 @@
                                     <% end %>
                                     </tr>
                                </table>
-                        </div>
+        </div>
+        <div class="col-sm-6">
+                     <h3>Hive Internal Temperature</h3>
                     </div>
                 </div>
             </div>
-
-
-      <div class="container">
-          <div class="service_details_content">
-                       
-        <div class="single_part_content">
-                        <p class="solid"><h3> Hive Forecast</h3> </p>
-        <div class="row">
-        <div class="col-sm-6" style="background-color:yellow;">
-          <p>Lorem ipsum...</p>
         </div>
-        <div class="col-sm-6" style="background-color:pink;">
-          <p>Sed ut perspiciatis...</p>
+    </section>
         </div>
       </div>
 </div>
@@ -148,7 +122,7 @@
     
 
 <br>
-
+ <!-- >>>>>>>>>>>>>>>> Map API <<<<<<<<<<<<<<<< -->
 
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -170,6 +144,7 @@
   </head>
   <body>
   <h3>Foraging Distance</h3>
+
     <div id="map"></div>
     <script>
 

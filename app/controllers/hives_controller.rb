@@ -54,6 +54,29 @@ before_action :authenticate_user!
     @hive.geocode
   end
 
+  def edit
+    @hive = Hive.find(params[:id])
+  end
+
+  def update
+    @hive = Hive.find(params[:id])
+      @hive.assign_attributes(
+                              hive_name: params[:hive_name],
+                              bee_breed: params[:bee_breed],
+                              hive_style: params[:hive_style],
+                              street: params[:street],
+                              hive_city: params[:hive_city],
+                              hive_state: params[:hive_state],
+                              hive_origin: params[:hive_origin],
+                              queen_origin: params[:queen_origin]
+                              )
+    if @hive.save
+      flash[:success] = "Hive Information Updated"
+      redirect_to "/hives/#{@hive.id}"
+    end 
+
+  end 
+
   def destroy
     hive = Hive.find(params[:id])
     hive.destroy

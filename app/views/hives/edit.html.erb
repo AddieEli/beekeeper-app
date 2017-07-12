@@ -1,0 +1,45 @@
+<h2>Edit this</h2>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= form_tag "/hives/#{@hive.id}", method: :patch do %>
+<div>
+  <%= label_tag :hive_name %>
+  <%= text_field_tag :hive_name%>  
+</div>
+<div>
+  <%= label_tag :bee_breed %>
+  <%= text_field_tag :bee_breed %>  
+</div>
+<div>
+  <%= label_tag :hive_style%>
+  <%= text_field_tag :hive_style%>  
+</div>
+<div>
+  <%= label_tag :parent_id %>
+  <%= text_field_tag :parent_id %>
+</div>
+<div>
+  <%= label_tag :hive_origin%>
+  <%= text_field_tag :hive_origin %>  
+</div>
+<div>
+  <%= label_tag :street%>
+  <%= text_field_tag :street %>  
+</div>
+<div>
+  <%= label_tag :hive_city %>
+  <%= text_field_tag :hive_city %>  
+</div>
+<div>
+  <%= label_tag :hive_state %>
+  <%= text_field_tag :hive_state %>  
+</div>
+
+<%= submit_tag "Update Hive" %>
+
+  <% end %>
