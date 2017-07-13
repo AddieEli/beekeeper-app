@@ -85,11 +85,11 @@
           <div class="service_details_content">
                        
         <div class="single_part_content">
-                        <p class="solid"><h3> Tempratures</h3> </p>
+                        <p class="solid"><h3> Temperatures</h3> </p>
         <div class="row">
         <div class="col-sm-6">
           <h3> 5  Day Forecast</h3> 
-                               <h4 text-decoration: strong; align="center">Current Temprature: <%= @temperature %>°<%= @temp_unit %></h4>
+                               <h4 text-decoration: strong; align="center">Current Temperature: <%= @temperature %>°<%= @temp_unit %></h4>
                               <table>
                                 <tr>
                                   <th class="text-center">Day</th>
@@ -189,12 +189,26 @@
 
 
 
-
-
-
- 
-
-
-  
-
- 
+---------------------------
+<!-- Replace your-device-ID-goes-here with your actual device ID
+and replace your-access-token-goes-here with your actual access token-->
+<!DOCTYPE>
+<html>
+  <body>
+  <center>
+  <br>
+  <br>
+  <br>
+  <form action="https://api.particle.io/v1/devices/380032000651353530373132/led?access_token=544e7e04209aa0a71aafb2edbf95a33b22873d37" method="POST">
+    Tell your device what to do!<br>
+    <br>
+    <input type="radio" name="arg" value="on">Turn the LED on.
+    <br>
+    <input type="radio" name="arg" value="off">Turn the LED off.
+    <br>
+    <br>
+    <input type="submit" value="Do it!">
+  </form>
+  </center>
+  </body>
+</html>
