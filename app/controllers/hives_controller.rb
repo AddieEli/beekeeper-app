@@ -52,6 +52,11 @@ before_action :authenticate_user!
     @forecasts = @channel["item"]["forecast"].first(5)
 
     @hive.geocode
+
+    @internal = Unirest.get(URI.decode("https://api.particle.io/v1/devices/380032000651353530373132/pool_tmp?access_token=a6d70792fd8cbe5a00d67b2c28dc85264a12457e")).body["result"]
+    
+
+
   end
 
   def edit
