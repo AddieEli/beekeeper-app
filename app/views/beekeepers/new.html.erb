@@ -1,30 +1,55 @@
-<h1>Join the Hive</h1>
 
-<%= form_tag '/beekeepers', method: :post do %>
-<div>
-  <%= label_tag :first_name %>
-  <%= text_field_tag :first_name %>  
-</div>
-<div>
-  <%= label_tag :last_name %>
-  <%= text_field_tag :last_name %>  
-</div>
-<div>
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>  
-</div>
-<div>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>  
-</div>
-<div>
-  <%= label_tag :password_confirmation %>
-  <%= password_field_tag :password_confirmation %>  
-</div>
-<%= submit_tag "Join!" %>
-<% end %>
+<!-- >>>>>>>>>>>>>>>> Breadcumb Area Start <<<<<<<<<<<<<<<< -->
+    <section class="breadcumb_area background-overlay" style="background-image: url(https://honeybeesuite.com/wp-content/uploads/2016/10/Half-dozen-bees-dahlia.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb_section">
+                        <!-- Breadcumb Page Title -->
+                        <div class="page_title">
+                            <h3>Welcome Home</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<div class="container">
+          <div class="service_details_content">
+          <div class="single_part_content">
+     
+  <div class="col-sm-6">
+          <h3> Join Apiary</h3> 
+    <%= form_tag '/beekeepers', method: :post do %>
+          <div>
+            <%= label_tag :first_name %>
+            <%= text_field_tag :first_name %>  
+          </div>
+          <div>
+            <%= label_tag :last_name %>
+            <%= text_field_tag :last_name %>  
+          </div>
+          <div>
+            <%= label_tag :email %>
+            <%= email_field_tag :email %>  
+          </div>
+          <div>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>  
+          </div>
+          <div>
+            <%= label_tag :password_confirmation %>
+            <%= password_field_tag :password_confirmation %>  
+          </div>
+          <%= submit_tag "Join!" %>
+          <% end %>
+          </div>
 
-<h2>Already have an account, sign in:</h2>
+<div class="col-sm-6">
+    <h3>Log in</h3>
+        
+<h2></h2>
     <%= form_tag "/login", method: :post do %>
     <div>
       <%= label_tag :email %>
@@ -36,3 +61,13 @@
     </div>
     <%= submit_tag "Log in" %>
     <% end %>
+
+</div>
+  </div>
+    </div>
+    </div>
+    <br>
+    <br>
+
+    </section>
+

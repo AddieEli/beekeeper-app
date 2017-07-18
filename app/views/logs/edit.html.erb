@@ -1,43 +1,68 @@
-<br>
-<br>
-<br>
-<br>
+<!-- >>>>>>>>>>>>>>>> Breadcumb Area Start <<<<<<<<<<<<<<<< -->
+    <section class="breadcumb_area background-overlay" style="background-image: url(http://68.media.tumblr.com/0f639d964052eff7a7f69a4a49123c88/tumblr_ntsra7yF4e1riijaro1_1280.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb_section">
+                        <!-- Breadcumb Page Title -->
+                        <div class="page_title">
+                            <h3>Hello <%= current_beekeeper.first_name %>,</h3>
+                        </div>
+                        <!-- Breadcumb Page Pagination -->
+                        <ol class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/hives">Your Apiary</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                  <div class="page_title">
+                      <h3>Edit Notes</h3>
+        </div>
 
-<h1>Edit Log</h1>
 <%= form_tag "/hives/#{@hive.id}/logs/#{@log.id}", method: :patch do %>
   <%= hidden_field_tag :hive_id, params[:hive_id] %>
   <%= hidden_field_tag :log_id, params[:log_id] %>
-  <div>
-    <%= label_tag :notes %>
-    <%= text_area_tag :notes %>
-  </div>
-  <br>
-  <div>
-  <h3>How was the hive during this visit?</h3>
-     In Good Health: <%= radio_button_tag("hive_general_status", "In Good Health", true) %>
-     <br>
-    Uncertain: <%= radio_button_tag("hive_general_status", "Uncertain") %>
-    <br>
-    SOS: <%= radio_button_tag("hive_general_status", "SOS") %> 
-    <br>
-  </div>
+   <div class="form-group">
+                    <%= label_tag :notes %>
+                      <label for="Notes"></label>
+                      <textarea class="form-control" rows="5" id="notes" name="notes"></textarea>
+                    </div>
+                      <br>
+                    <div>
+                      <h4>How was the hive during this visit?</h4>
+                       In Good Health: <%= radio_button_tag("hive_general_status", "In Good Health", true) %>
+                        Uncertain: <%= radio_button_tag("hive_general_status", "Uncertain") %>
+                      SOS: <%= radio_button_tag("hive_general_status", "SOS") %> 
+                    </div>
+                    <br>
+                    <div>
+                      <h4>Did you see the Queen?</h4>  
+                       Yes <%= check_box_tag("queen", "Yes") %>
+                       No <%= check_box_tag("queen", "No") %>  
+                    </div>
+                    <br> 
+                    <div>
+                      <h4>Did you see larva?</h4>  
+                       Yes <%= check_box_tag("larva", "Yes") %>
+                       No <%= check_box_tag("larva", "No") %>  
+                    </div>
+                    <br>
+                    <div>
+                      <h4>Did you see proper comb build?</h4>  
+                       Yes <%= check_box_tag("comb_build", "Yes") %>
+                       No <%= check_box_tag("comb_build", "No") %>  
+                    </div>
+                    <br>
 
-  <div>
-    <h3>Did you see the Queen?</h3>  
-     Yes <%= check_box_tag("queen", "Yes") %>
-     No <%= check_box_tag("queen", "No") %>  
-  </div>
-    <div>
-    <h3>Did you see larva?</h3>  
-     Yes <%= check_box_tag("larva", "Yes") %>
-     No <%= check_box_tag("larva", "No") %>  
-  </div>
-    <br>
-     <div>
-    <h3>Did you see proper comb build?</h3>
-     Yes <%= check_box_tag("comb_build", "Yes") %>
-     No <%= check_box_tag("comb_build", "No") %>  
-  </div>
-    <br>
-      <%= submit_tag "Update Log" %>
+
+      <%= submit_tag "Update Notes", class: "btn btn-flat flat-inverse"%> 
   <% end  %>
+    </div>
+    </section>

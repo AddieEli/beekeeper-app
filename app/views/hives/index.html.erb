@@ -25,37 +25,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h3> Your Apiary </h3>
+
+                    <h3 style="color:orange;"> Your Apiary </h3>
                     <% current_beekeeper.hives.each do |hive| %>
-                        <h4><a href="/hives/<%= hive.id %>"><%= hive.hive_name %></a> </h4>
-                           <h5> <%= hive.last_log %> </h5>   
+                        <h4>Hive Name: <a href="/hives/<%= hive.id %>"><%= hive.hive_name %></a> </h4>
+                           <h5> Late Check Status: <%= hive.last_log %> </h5>   
 
                         <% end %>
-                </div>
-            
-                 
-               
+                </div> 
             </div>
         </div>
     </section>
 
-
- ------------- may remove ---------------
-
-
-<h3>Your Currently Tracked Hives</h3>
-
-
-<br>
-<h3>Apiary Chart</h3>
-<% @hives.each do |hive| %>
-      <%= render partial: "hive", locals: {hive: hive, level: 1} %>
-  <% end %>
-  <div id="app">
-  {{ message }}
-</div>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-       <div id="chart_div"></div>
 
 

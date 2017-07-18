@@ -1,45 +1,73 @@
-<h2>Edit this</h2>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
+ <!DOCTYPE html>
+<html>
+ 
+<!-- >>>>>>>>>>>>>>>> Breadcumb Area Start <<<<<<<<<<<<<<<< -->
+    <section class="breadcumb_area background-overlay" style="background-image: url(https://ucarecdn.com/f041c201-1b8b-4753-9daf-cfa4fab1347b/-/crop/4422x2716/541,853/-/preview/-/stretch/off/-/resize/2000x/-/quality/normal/);">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb_section">
+                        <!-- Breadcumb Page Title -->
+                        <div class="page_title">
+                            <h3> <%= @hive.hive_name %></h3>
+                        </div>
+                        <!-- Breadcumb Page Pagination -->
+                        <ol class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/hives">Your Apiary</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                  <div class="page_title">
+                      <h3>Edit Hive</h3>
+        </div>
 <%= form_tag "/hives/#{@hive.id}", method: :patch do %>
 <div>
   <%= label_tag :hive_name %>
   <%= text_field_tag :hive_name%>  
 </div>
+<br>
 <div>
   <%= label_tag :bee_breed %>
   <%= text_field_tag :bee_breed %>  
 </div>
+<br>
 <div>
   <%= label_tag :hive_style%>
   <%= text_field_tag :hive_style%>  
 </div>
-<div>
-  <%= label_tag :parent_id %>
-  <%= text_field_tag :parent_id %>
-</div>
+<br>
 <div>
   <%= label_tag :hive_origin%>
   <%= text_field_tag :hive_origin %>  
 </div>
+<br>
 <div>
   <%= label_tag :street%>
   <%= text_field_tag :street %>  
 </div>
+<br>
 <div>
   <%= label_tag :hive_city %>
   <%= text_field_tag :hive_city %>  
 </div>
+<br>
 <div>
   <%= label_tag :hive_state %>
   <%= text_field_tag :hive_state %>  
 </div>
-
-<%= submit_tag "Update Hive" %>
+<br>
+<%= submit_tag "Update Hive", class: "btn btn-flat flat-inverse"%> 
 
   <% end %>
+
+  </div>
+    </section>
