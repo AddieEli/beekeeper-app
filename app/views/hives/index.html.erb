@@ -11,8 +11,8 @@
                         </div>
                         <!-- Breadcumb Page Pagination -->
                         <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active">something</li>
+                            <li><a href="/">Home</a></li>
+                            
                         </ol>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <h3 style="color:orange;"> Your Apiary </h3>
                     <% current_beekeeper.hives.each do |hive| %>
                         <h4>Hive Name: <a href="/hives/<%= hive.id %>"><%= hive.hive_name %></a> </h4>
-                           <h5> Late Check Status: <%= hive.last_log %> </h5>   
+                           <h5> Late Check Status: <%= hive.last_log%><br> </h5>   
 
                         <% end %>
                 </div> 

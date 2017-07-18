@@ -71,7 +71,7 @@
                               <h5> Queen: <%= @log.queen %></h5> 
                               <h5> Larva:<%= @log.larva %></h5> 
                               <h5> Proper Comb Build: <%= @log.comb_build %></h5>
-                              <h5>Overall Status <%= @log.hive_general_status %></h5>
+                              <h5>Overall Status: <%= @log.hive_general_status %></h5>
                               <%= link_to "Edit", "/hives/#{ @hive.id}/logs/#{ @log.id}/edit" %> | 
                               <%= link_to "Delete Log", "/logs/#{ @log.id }", method: :delete %>
                               <br>
@@ -117,6 +117,7 @@
         </div>
         <div class="col-sm-6">
                      <h3>Hive Internal Temperature</h3>
+                     <h5 th class="text-center"> Healthy hives range from 90-95° F</h5>
                          <h4 te class="text-center"> <%= @internal %> </h4>
                     </div>
                 </div>
