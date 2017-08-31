@@ -54,7 +54,8 @@
                       <h4>Hive Style: Warre Hive</h4>
                       <h4>Address: </h4>   
                           <%= @hive.street %> <br>
-                          <%= @hive.hive_city %>, <%= @hive.hive_state %>
+                          <%= @hive.hive_city %>
+                          <br> <%= @hive.hive_state %>
                       
                       <%= link_to "Edit", "/hives/#{ @hive.id }/edit" %>
                     </div>
