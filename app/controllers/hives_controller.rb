@@ -54,10 +54,6 @@ before_action :authenticate_user!
 
     @hive.geocode
 
-    
-    
-
-
   end
 
   def edit

@@ -38,7 +38,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Classy - Multipurpose Template | Service Landing</title>
+    <title>Apiary - For Beekeepers</title>
 
     <!-- Favicon  -->
     <link rel="shortcut icon" href="/img/core-img/favicon.ico">
@@ -101,6 +101,9 @@
                                     <li><a href="/hives" target="_blank">Hives</a></li>
                                     <li><a href="/hive">Add a Hive</a>
                                     </li>
+                                    <li><a href="/logout"> Account</a>
+                                    </li>
+                                    
                                 </ul>
                             </li>
                             
@@ -111,10 +114,13 @@
             </div>
         </div>
     </header>
+    <body>
+    <%= yield %>
+    </body>
     <!-- >>>>>>>>>>>>>>>> Header Area End <<<<<<<<<<<<<<<< -->
 
     <!-- >>>>>>>>>>>>>>>> Footer Area Start <<<<<<<<<<<<<<<< -->
-    <%= yield %>
+    
 
 
     <footer class="footer_area">
